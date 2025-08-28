@@ -3,270 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>パスワード生成ツール - 自動デプロイテスト</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 30px;
-        }
-        
-        .option-group {
-            margin-bottom: 20px;
-        }
-        
-        .checkbox-group {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-        
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #fafafa;
-        }
-        
-        .checkbox-item input[type="checkbox"] {
-            margin-right: 10px;
-            transform: scale(1.2);
-        }
-        
-        .slider-group {
-            margin-bottom: 25px;
-        }
-        
-        .slider-label {
-            font-weight: bold;
-            margin-bottom: 10px;
-            display: block;
-        }
-        
-        .slider-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        #lengthSlider {
-            flex: 1;
-            height: 5px;
-            border-radius: 5px;
-            background: #ddd;
-            outline: none;
-        }
-        
-        #lengthValue {
-            font-size: 18px;
-            font-weight: bold;
-            color: #007bff;
-            min-width: 50px;
-        }
-        
-        .password-display {
-            margin-bottom: 20px;
-        }
-        
-        #passwordOutput {
-            width: 94%;
-            padding: 15px;
-            font-family: 'Courier New', monospace;
-            font-size: 16px;
-            border: 2px solid #007bff;
-            border-radius: 5px;
-            background-color: #f8f9ff;
-            resize: none;
-        }
-        
-        #copyButton {
-            width: 100%;
-            padding: 15px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        #copyButton:hover {
-            background-color: #0056b3;
-        }
-        
-        #copyButton:active {
-            background-color: #004085;
-        }
-        
-        .copy-feedback {
-            text-align: center;
-            margin-top: 10px;
-            color: #28a745;
-            font-weight: bold;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .copy-feedback.show {
-            opacity: 1;
-        }
-    </style>
+    <title>Fitness & Body Make Portal - フィットネス・ボディメイクの総合ポータル</title>
+    <meta name="description" content="フィットネス初心者から中級者まで対応する、健康・体づくりに関する情報ポータルサイト。ワークアウト、栄養、ツールを総合的にサポートします。">
+    <meta name="keywords" content="フィットネス, ボディメイク, ワークアウト, 筋トレ, 栄養, ダイエット, 健康">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 <body>
-    <div class="container">
-        <h1>パスワード生成ツール</h1>
-        
-        <div class="option-group">
-            <div class="checkbox-group">
-                <div class="checkbox-item">
-                    <input type="checkbox" id="includeNumbers" checked>
-                    <label for="includeNumbers">数字を含む (0-9)</label>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">Fitness & Body Make Portal</a>
+            <ul class="nav-links">
+                <li><a href="#home">ホーム</a></li>
+                <li><a href="#features">特徴</a></li>
+                <li><a href="#categories">カテゴリー</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>理想の体を手に入れよう</h1>
+                <p>フィットネス初心者から中級者まで、あなたの健康・体づくりをトータルサポート。科学的根拠に基づいたワークアウト、栄養管理、実用的なツールで理想のボディを実現しましょう。</p>
+                <a href="#features" class="cta-button">今すぐ始める</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">なぜ選ばれるのか</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h3>科学的アプローチ</h3>
+                    <p>最新のスポーツ科学と栄養学に基づいた、効果的で安全なトレーニング方法をご提供します。</p>
                 </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="includeLowercase" checked>
-                    <label for="includeLowercase">小文字を含む (a-z)</label>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>実用的ツール</h3>
+                    <p>BMI計算、カロリー計算、トレーニング記録など、日々のボディメイクをサポートするツールが充実。</p>
                 </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="includeUppercase" checked>
-                    <label for="includeUppercase">大文字を含む (A-Z)</label>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>個別対応</h3>
+                    <p>初心者から中級者まで、あなたのレベルや目標に合わせたカスタマイズされた情報を提供します。</p>
                 </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="includeSymbols">
-                    <label for="includeSymbols">記号を含む (!@#$%^&*)</label>
+                <div class="feature-card">
+                    <div class="feature-icon">🍎</div>
+                    <h3>栄養ガイド</h3>
+                    <p>体づくりに欠かせない栄養知識と実践的な食事プランで、内側からの美しさをサポート。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>進捗管理</h3>
+                    <p>データに基づいた進捗の可視化で、モチベーションを維持しながら目標達成をサポートします。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>コミュニティ</h3>
+                    <p>同じ目標を持つ仲間との情報交換とサポートで、継続的な成長を実現します。</p>
                 </div>
             </div>
         </div>
-        
-        <div class="slider-group">
-            <label for="lengthSlider" class="slider-label">パスワードの長さ</label>
-            <div class="slider-container">
-                <input type="range" id="lengthSlider" min="4" max="128" value="12">
-                <span id="lengthValue">12</span>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <h2 class="section-title">主要カテゴリー</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-image">🏋️‍♂️</div>
+                    <div class="category-content">
+                        <h3>ワークアウト</h3>
+                        <p>筋力トレーニング、有酸素運動、ストレッチまで。目的別・レベル別のトレーニングプログラムをご提供。正しいフォームと効果的な方法で、安全に理想の体を目指しましょう。</p>
+                        <a href="pages/workout/index.html" class="learn-more">詳しく見る →</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">🥗</div>
+                    <div class="category-content">
+                        <h3>栄養・食事</h3>
+                        <p>体づくりに必要な栄養素、食事タイミング、サプリメントの活用法まで。科学的根拠に基づいた栄養戦略で、トレーニング効果を最大化しましょう。</p>
+                        <a href="pages/nutrition/index.html" class="learn-more">詳しく見る →</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">🛠️</div>
+                    <div class="category-content">
+                        <h3>ツール・計算機</h3>
+                        <p>BMI計算、基礎代謝量、目標カロリー、体脂肪率計算など、ボディメイクに役立つ各種計算ツールを無料でご利用いただけます。</p>
+                        <a href="pages/tools/index.html" class="learn-more">詳しく見る →</a>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <div class="password-display">
-            <textarea id="passwordOutput" rows="3" readonly placeholder="生成されたパスワードがここに表示されます"></textarea>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fitness & Body Make Portal</h3>
+                    <p>理想の体づくりをサポートする総合情報ポータルサイト。科学的根拠に基づいた情報で、あなたの健康とフィットネスライフを応援します。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>メインコンテンツ</h3>
+                    <ul>
+                        <li><a href="pages/workout/index.html">ワークアウト</a></li>
+                        <li><a href="pages/nutrition/index.html">栄養・食事</a></li>
+                        <li><a href="pages/tools/index.html">ツール・計算機</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>サポート</h3>
+                    <ul>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                        <li><a href="#faq">よくある質問</a></li>
+                        <li><a href="#privacy">プライバシーポリシー</a></li>
+                        <li><a href="#terms">利用規約</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>フォローしてください</h3>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fitness & Body Make Portal. All rights reserved.</p>
+            </div>
         </div>
-        
-        <button id="copyButton">パスワードをコピー</button>
-        <div class="copy-feedback" id="copyFeedback">コピーしました！</div>
-    </div>
+    </footer>
 
-    <script>
-        const includeNumbers = document.getElementById('includeNumbers');
-        const includeLowercase = document.getElementById('includeLowercase');
-        const includeUppercase = document.getElementById('includeUppercase');
-        const includeSymbols = document.getElementById('includeSymbols');
-        const lengthSlider = document.getElementById('lengthSlider');
-        const lengthValue = document.getElementById('lengthValue');
-        const passwordOutput = document.getElementById('passwordOutput');
-        const copyButton = document.getElementById('copyButton');
-        const copyFeedback = document.getElementById('copyFeedback');
-
-        const numbers = '0123456789';
-        const lowercase = 'abcdefghijklmnopqrstuvwxyz';
-        const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        const symbols = '!@#$%^&*()_+-=[]{}|;:,.<>?';
-
-        function generatePassword() {
-            let characters = '';
-            let guaranteedChars = '';
-            
-            if (includeNumbers.checked) {
-                characters += numbers;
-                guaranteedChars += numbers[Math.floor(Math.random() * numbers.length)];
-            }
-            if (includeLowercase.checked) {
-                characters += lowercase;
-                guaranteedChars += lowercase[Math.floor(Math.random() * lowercase.length)];
-            }
-            if (includeUppercase.checked) {
-                characters += uppercase;
-                guaranteedChars += uppercase[Math.floor(Math.random() * uppercase.length)];
-            }
-            if (includeSymbols.checked) {
-                characters += symbols;
-                guaranteedChars += symbols[Math.floor(Math.random() * symbols.length)];
-            }
-            
-            if (characters === '') {
-                passwordOutput.value = 'エラー: 少なくとも一つの文字種類を選択してください';
-                return;
-            }
-            
-            const length = parseInt(lengthSlider.value);
-            let password = '';
-            
-            // まず、選択された各種類から最低1文字ずつ追加
-            password += guaranteedChars;
-            
-            // 残りの文字をランダムに生成
-            for (let i = password.length; i < length; i++) {
-                password += characters[Math.floor(Math.random() * characters.length)];
-            }
-            
-            // パスワードの文字をシャッフル
-            password = password.split('').sort(() => Math.random() - 0.5).join('');
-            
-            passwordOutput.value = password;
-        }
-
-        function updateLengthDisplay() {
-            lengthValue.textContent = lengthSlider.value;
-        }
-
-        function copyToClipboard() {
-            if (passwordOutput.value && !passwordOutput.value.startsWith('エラー:')) {
-                navigator.clipboard.writeText(passwordOutput.value).then(() => {
-                    copyFeedback.classList.add('show');
-                    setTimeout(() => {
-                        copyFeedback.classList.remove('show');
-                    }, 2000);
-                }).catch(() => {
-                    // フォールバック: 古いブラウザ用
-                    passwordOutput.select();
-                    document.execCommand('copy');
-                    copyFeedback.classList.add('show');
-                    setTimeout(() => {
-                        copyFeedback.classList.remove('show');
-                    }, 2000);
-                });
-            }
-        }
-
-        // イベントリスナーを追加
-        includeNumbers.addEventListener('change', generatePassword);
-        includeLowercase.addEventListener('change', generatePassword);
-        includeUppercase.addEventListener('change', generatePassword);
-        includeSymbols.addEventListener('change', generatePassword);
-        lengthSlider.addEventListener('input', () => {
-            updateLengthDisplay();
-            generatePassword();
-        });
-        copyButton.addEventListener('click', copyToClipboard);
-
-        // 初期パスワード生成
-        generatePassword();
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ワークアウト - Fitness & Body Make Portal</title>
+    <meta name="description" content="筋力トレーニング、有酸素運動、ストレッチまで。部位別・タイプ別・レベル別のトレーニングプログラムを提供。">
+    <meta name="keywords" content="ワークアウト, 筋トレ, トレーニング, エクササイズ, 筋力, 持久力, 柔軟性">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="workout.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../../index.html" class="logo">Fitness & Body Make Portal</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">ホーム</a></li>
+                <li><a href="../workout/index.html" class="active">ワークアウト</a></li>
+                <li><a href="../nutrition/index.html">栄養</a></li>
+                <li><a href="../tools/index.html">ツール</a></li>
+            </ul>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="workout-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>ワークアウトガイド</h1>
+                <p>あなたの目標と体力レベルに合った最適なトレーニングプログラムを見つけましょう。科学的根拠に基づいた効果的な運動方法をご紹介します。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Navigation -->
+    <section class="quick-nav">
+        <div class="container">
+            <div class="nav-buttons">
+                <button class="nav-btn active" data-target="body-parts">部位別</button>
+                <button class="nav-btn" data-target="training-types">タイプ別</button>
+                <button class="nav-btn" data-target="levels">レベル別</button>
+                <button class="nav-btn" data-target="exercises">運動説明</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Body Parts Training Section -->
+    <section id="body-parts" class="section active">
+        <div class="container">
+            <h2 class="section-title">部位別トレーニング</h2>
+            <p class="section-subtitle">鍛えたい筋肉部位を選んで、効果的なエクササイズを始めましょう</p>
+            
+            <div class="cards-grid">
+                <div class="workout-card">
+                    <div class="card-image">💪</div>
+                    <div class="card-content">
+                        <h3>胸筋</h3>
+                        <p>大胸筋を中心とした上半身前面の筋肉を鍛えるトレーニング</p>
+                        <ul class="exercise-list">
+                            <li>プッシュアップ</li>
+                            <li>ベンチプレス</li>
+                            <li>ダンベルフライ</li>
+                            <li>インクラインプレス</li>
+                        </ul>
+                        <div class="card-stats">
+                            <span class="difficulty">💪 中級者</span>
+                            <span class="duration">⏱️ 30-45分</span>
+                        </div>
+                        <button class="start-btn">トレーニング開始</button>
+                    </div>
+                </div>
+
+                <div class="workout-card">
+                    <div class="card-image">🏋️‍♂️</div>
+                    <div class="card-content">
+                        <h3>背中</h3>
+                        <p>広背筋・僧帽筋など背面の筋肉を強化するプログラム</p>
+                        <ul class="exercise-list">
+                            <li>プルアップ</li>
+                            <li>ラットプルダウン</li>
+                            <li>ベントオーバーロー</li>
+                            <li>デッドリフト</li>
+                        </ul>
+                        <div class="card-stats">
+                            <span class="difficulty">💪 中級者</span>
+                            <span class="duration">⏱️ 35-50分</span>
+                        </div>
+                        <button class="start-btn">トレーニング開始</button>
+                    </div>
+                </div>
+
+                <div class="workout-card">
+                    <div class="card-image">🦵</div>
+                    <div class="card-content">
+                        <h3>脚</h3>
+                        <p>大腿四頭筋・ハムストリング・臀筋を鍛える下半身トレーニング</p>
+                        <ul class="exercise-list">
+                            <li>スクワット</li>
+                            <li>ランジ</li>
+                            <li>レッグプレス</li>
+                            <li>カーフレイズ</li>
+                        </ul>
+                        <div class="card-stats">
+                            <span class="difficulty">💪 初級者</span>
+                            <span class="duration">⏱️ 25-40分</span>
+                        </div>
+                        <button class="start-btn">トレーニング開始</button>
+                    </div>
+                </div>
+
+                <div class="workout-card">
+                    <div class="card-image">💪</div>
+                    <div class="card-content">
+                        <h3>肩</h3>
+                        <p>三角筋を中心とした肩回りの筋肉を強化</p>
+                        <ul class="exercise-list">
+                            <li>ショルダープレス</li>
+                            <li>ラテラルレイズ</li>
+                            <li>リアデルトフライ</li>
+                            <li>アップライトロー</li>
+                        </ul>
+                        <div class="card-stats">
+                            <span class="difficulty">💪 中級者</span>
+                            <span class="duration">⏱️ 20-35分</span>
+                        </div>
+                        <button class="start-btn">トレーニング開始</button>
+                    </div>
+                </div>
+
+                <div class="workout-card">
+                    <div class="card-image">🔥</div>
+                    <div class="card-content">
+                        <h3>腹筋・体幹</h3>
+                        <p>コア筋肉を鍛えて安定性と姿勢を改善</p>
+                        <ul class="exercise-list">
+                            <li>プランク</li>
+                            <li>クランチ</li>
+                            <li>ロシアンツイスト</li>
+                            <li>マウンテンクライマー</li>
+                        </ul>
+                        <div class="card-stats">
+                            <span class="difficulty">💪 初級者</span>
+                            <span class="duration">⏱️ 15-25分</span>
+                        </div>
+                        <button class="start-btn">トレーニング開始</button>
+                    </div>
+                </div>
+
+                <div class="workout-card">
+                    <div class="card-image">💪</div>
+                    <div class="card-content">
+                        <h3>腕</h3>
+                        <p>上腕二頭筋・三頭筋を鍛える腕の筋力トレーニング</p>
+                        <ul class="exercise-list">
+                            <li>バイセップカール</li>
+                            <li>トライセップエクステンション</li>
+                            <li>ハンマーカール</li>
+                            <li>ディップス</li>
+                        </ul>
+                        <div class="card-stats">
+                            <span class="difficulty">💪 初級者</span>
+                            <span class="duration">⏱️ 20-30分</span>
+                        </div>
+                        <button class="start-btn">トレーニング開始</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Types Section -->
+    <section id="training-types" class="section">
+        <div class="container">
+            <h2 class="section-title">トレーニングタイプ別</h2>
+            <p class="section-subtitle">目的に応じたトレーニング方法を選択してください</p>
+            
+            <div class="cards-grid">
+                <div class="type-card">
+                    <div class="type-icon">🏋️‍♂️</div>
+                    <h3>筋力トレーニング</h3>
+                    <p class="type-description">筋肉量を増やし、基礎代謝を向上させる高強度トレーニング</p>
+                    <div class="type-benefits">
+                        <h4>効果・メリット:</h4>
+                        <ul>
+                            <li>筋肉量の増加</li>
+                            <li>基礎代謝の向上</li>
+                            <li>骨密度の改善</li>
+                            <li>日常動作の改善</li>
+                        </ul>
+                    </div>
+                    <div class="type-schedule">
+                        <strong>推奨頻度:</strong> 週3-4回<br>
+                        <strong>セット数:</strong> 3-4セット<br>
+                        <strong>回数:</strong> 8-12回
+                    </div>
+                    <button class="type-btn">プログラム詳細</button>
+                </div>
+
+                <div class="type-card">
+                    <div class="type-icon">🏃‍♂️</div>
+                    <h3>持久力トレーニング</h3>
+                    <p class="type-description">心肺機能を向上させ、長時間の運動に対応できる体力を養成</p>
+                    <div class="type-benefits">
+                        <h4>効果・メリット:</h4>
+                        <ul>
+                            <li>心肺機能の向上</li>
+                            <li>脂肪燃焼効果</li>
+                            <li>血流改善</li>
+                            <li>ストレス軽減</li>
+                        </ul>
+                    </div>
+                    <div class="type-schedule">
+                        <strong>推奨頻度:</strong> 週4-5回<br>
+                        <strong>時間:</strong> 30-60分<br>
+                        <strong>強度:</strong> 中程度（60-70% HRmax）
+                    </div>
+                    <button class="type-btn">プログラム詳細</button>
+                </div>
+
+                <div class="type-card">
+                    <div class="type-icon">🧘‍♀️</div>
+                    <h3>柔軟性トレーニング</h3>
+                    <p class="type-description">関節可動域を広げ、筋肉の柔軟性を向上させるストレッチング</p>
+                    <div class="type-benefits">
+                        <h4>効果・メリット:</h4>
+                        <ul>
+                            <li>関節可動域の拡大</li>
+                            <li>筋肉の柔軟性向上</li>
+                            <li>怪我の予防</li>
+                            <li>姿勢の改善</li>
+                        </ul>
+                    </div>
+                    <div class="type-schedule">
+                        <strong>推奨頻度:</strong> 毎日<br>
+                        <strong>時間:</strong> 15-30分<br>
+                        <strong>ホールド時間:</strong> 30-60秒
+                    </div>
+                    <button class="type-btn">プログラム詳細</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Levels Section -->
+    <section id="levels" class="section">
+        <div class="container">
+            <h2 class="section-title">レベル別プログラム</h2>
+            <p class="section-subtitle">あなたの経験レベルに合った最適なトレーニングプランを選択</p>
+            
+            <div class="level-tabs">
+                <button class="level-tab active" data-level="beginner">初心者</button>
+                <button class="level-tab" data-level="intermediate">中級者</button>
+                <button class="level-tab" data-level="advanced">上級者</button>
+            </div>
+
+            <div class="level-content">
+                <div id="beginner" class="level-section active">
+                    <div class="level-info">
+                        <h3>初心者プログラム</h3>
+                        <p class="level-description">運動初心者や久しぶりに運動を始める方向けの基礎プログラム</p>
+                    </div>
+                    
+                    <div class="program-grid">
+                        <div class="program-card">
+                            <h4>4週間基礎プログラム</h4>
+                            <div class="program-details">
+                                <p><strong>期間:</strong> 4週間</p>
+                                <p><strong>頻度:</strong> 週3回</p>
+                                <p><strong>時間:</strong> 30-45分</p>
+                            </div>
+                            <div class="week-breakdown">
+                                <div class="week">
+                                    <h5>Week 1-2: 基礎作り</h5>
+                                    <ul>
+                                        <li>基本動作の習得</li>
+                                        <li>軽い負荷でのトレーニング</li>
+                                        <li>正しいフォームの練習</li>
+                                    </ul>
+                                </div>
+                                <div class="week">
+                                    <h5>Week 3-4: 負荷アップ</h5>
+                                    <ul>
+                                        <li>負荷の段階的増加</li>
+                                        <li>セット数・回数の調整</li>
+                                        <li>複合エクササイズの導入</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="program-btn">プログラム開始</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="intermediate" class="level-section">
+                    <div class="level-info">
+                        <h3>中級者プログラム</h3>
+                        <p class="level-description">基礎体力がある方向けの発展的なトレーニングプログラム</p>
+                    </div>
+                    
+                    <div class="program-grid">
+                        <div class="program-card">
+                            <h4>8週間発展プログラム</h4>
+                            <div class="program-details">
+                                <p><strong>期間:</strong> 8週間</p>
+                                <p><strong>頻度:</strong> 週4-5回</p>
+                                <p><strong>時間:</strong> 45-60分</p>
+                            </div>
+                            <div class="week-breakdown">
+                                <div class="week">
+                                    <h5>Week 1-3: 筋力向上</h5>
+                                    <ul>
+                                        <li>重量の段階的増加</li>
+                                        <li>複合エクササイズ中心</li>
+                                        <li>部位別分割トレーニング</li>
+                                    </ul>
+                                </div>
+                                <div class="week">
+                                    <h5>Week 4-6: 筋持久力</h5>
+                                    <ul>
+                                        <li>高回数トレーニング</li>
+                                        <li>サーキットトレーニング</li>
+                                        <li>有酸素運動の組み合わせ</li>
+                                    </ul>
+                                </div>
+                                <div class="week">
+                                    <h5>Week 7-8: ピーキング</h5>
+                                    <ul>
+                                        <li>最大強度トレーニング</li>
+                                        <li>パフォーマンステスト</li>
+                                        <li>次レベルへの準備</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="program-btn">プログラム開始</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="advanced" class="level-section">
+                    <div class="level-info">
+                        <h3>上級者プログラム</h3>
+                        <p class="level-description">高度な技術と強度を要求する競技レベルのトレーニング</p>
+                    </div>
+                    
+                    <div class="program-grid">
+                        <div class="program-card">
+                            <h4>12週間専門プログラム</h4>
+                            <div class="program-details">
+                                <p><strong>期間:</strong> 12週間</p>
+                                <p><strong>頻度:</strong> 週6回</p>
+                                <p><strong>時間:</strong> 60-90分</p>
+                            </div>
+                            <div class="week-breakdown">
+                                <div class="week">
+                                    <h5>Phase 1: 基礎強化</h5>
+                                    <ul>
+                                        <li>最大筋力の向上</li>
+                                        <li>動作の洗練</li>
+                                        <li>弱点部位の強化</li>
+                                    </ul>
+                                </div>
+                                <div class="week">
+                                    <h5>Phase 2: 専門性向上</h5>
+                                    <ul>
+                                        <li>競技特異的トレーニング</li>
+                                        <li>プライオメトリクス</li>
+                                        <li>アジリティ向上</li>
+                                    </ul>
+                                </div>
+                                <div class="week">
+                                    <h5>Phase 3: パフォーマンス</h5>
+                                    <ul>
+                                        <li>競技シミュレーション</li>
+                                        <li>ピークパフォーマンス</li>
+                                        <li>試合・大会対応</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="program-btn">プログラム開始</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exercise Explanations Section -->
+    <section id="exercises" class="section">
+        <div class="container">
+            <h2 class="section-title">運動説明・動画ガイド</h2>
+            <p class="section-subtitle">正しいフォームと効果的な実行方法を学びましょう</p>
+            
+            <div class="exercise-categories">
+                <button class="exercise-filter active" data-category="all">すべて</button>
+                <button class="exercise-filter" data-category="strength">筋力</button>
+                <button class="exercise-filter" data-category="cardio">有酸素</button>
+                <button class="exercise-filter" data-category="flexibility">柔軟性</button>
+            </div>
+
+            <div class="exercise-grid">
+                <div class="exercise-card" data-category="strength">
+                    <div class="exercise-media">
+                        <div class="video-placeholder">
+                            🎥 <span>動画プレビュー</span>
+                        </div>
+                        <div class="media-controls">
+                            <button class="play-btn">▶️ 再生</button>
+                            <button class="info-btn">ℹ️ 詳細</button>
+                        </div>
+                    </div>
+                    <div class="exercise-info">
+                        <h4>スクワット</h4>
+                        <div class="exercise-meta">
+                            <span class="category">筋力</span>
+                            <span class="difficulty">初級</span>
+                            <span class="target">🎯 脚・臀部</span>
+                        </div>
+                        <p class="exercise-description">下半身の基本エクササイズ。大腿四頭筋、ハムストリング、臀筋を効果的に鍛えます。</p>
+                        <div class="exercise-details">
+                            <div class="detail-item">
+                                <strong>セット数:</strong> 3-4セット
+                            </div>
+                            <div class="detail-item">
+                                <strong>回数:</strong> 12-15回
+                            </div>
+                            <div class="detail-item">
+                                <strong>休憩:</strong> 60-90秒
+                            </div>
+                        </div>
+                        <div class="key-points">
+                            <h5>重要ポイント:</h5>
+                            <ul>
+                                <li>膝がつま先より前に出ないよう注意</li>
+                                <li>背筋を真っ直ぐ保つ</li>
+                                <li>太ももが床と平行になるまで下げる</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-card" data-category="strength">
+                    <div class="exercise-media">
+                        <div class="video-placeholder">
+                            🎥 <span>動画プレビュー</span>
+                        </div>
+                        <div class="media-controls">
+                            <button class="play-btn">▶️ 再生</button>
+                            <button class="info-btn">ℹ️ 詳細</button>
+                        </div>
+                    </div>
+                    <div class="exercise-info">
+                        <h4>プッシュアップ</h4>
+                        <div class="exercise-meta">
+                            <span class="category">筋力</span>
+                            <span class="difficulty">初級</span>
+                            <span class="target">🎯 胸・肩・腕</span>
+                        </div>
+                        <p class="exercise-description">上半身の代表的な自重トレーニング。胸筋、三角筋、上腕三頭筋を同時に鍛えます。</p>
+                        <div class="exercise-details">
+                            <div class="detail-item">
+                                <strong>セット数:</strong> 3-4セット
+                            </div>
+                            <div class="detail-item">
+                                <strong>回数:</strong> 10-20回
+                            </div>
+                            <div class="detail-item">
+                                <strong>休憩:</strong> 60秒
+                            </div>
+                        </div>
+                        <div class="key-points">
+                            <h5>重要ポイント:</h5>
+                            <ul>
+                                <li>頭から足首まで一直線を保つ</li>
+                                <li>肘を45度の角度で開く</li>
+                                <li>胸を床に近づけるまで下げる</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-card" data-category="cardio">
+                    <div class="exercise-media">
+                        <div class="video-placeholder">
+                            🎥 <span>動画プレビュー</span>
+                        </div>
+                        <div class="media-controls">
+                            <button class="play-btn">▶️ 再生</button>
+                            <button class="info-btn">ℹ️ 詳細</button>
+                        </div>
+                    </div>
+                    <div class="exercise-info">
+                        <h4>バーピー</h4>
+                        <div class="exercise-meta">
+                            <span class="category">有酸素</span>
+                            <span class="difficulty">中級</span>
+                            <span class="target">🎯 全身</span>
+                        </div>
+                        <p class="exercise-description">全身を使った高強度インターバルトレーニング。心肺機能と筋力を同時に向上させます。</p>
+                        <div class="exercise-details">
+                            <div class="detail-item">
+                                <strong>セット数:</strong> 3-4セット
+                            </div>
+                            <div class="detail-item">
+                                <strong>回数:</strong> 8-12回
+                            </div>
+                            <div class="detail-item">
+                                <strong>休憩:</strong> 90秒
+                            </div>
+                        </div>
+                        <div class="key-points">
+                            <h5>重要ポイント:</h5>
+                            <ul>
+                                <li>動作を滑らかに連続して行う</li>
+                                <li>着地時に膝を軽く曲げる</li>
+                                <li>呼吸を止めずにリズムよく</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-card" data-category="flexibility">
+                    <div class="exercise-media">
+                        <div class="video-placeholder">
+                            🎥 <span>動画プレビュー</span>
+                        </div>
+                        <div class="media-controls">
+                            <button class="play-btn">▶️ 再生</button>
+                            <button class="info-btn">ℹ️ 詳細</button>
+                        </div>
+                    </div>
+                    <div class="exercise-info">
+                        <h4>キャット・カウストレッチ</h4>
+                        <div class="exercise-meta">
+                            <span class="category">柔軟性</span>
+                            <span class="difficulty">初級</span>
+                            <span class="target">🎯 背骨・体幹</span>
+                        </div>
+                        <p class="exercise-description">背骨の柔軟性を高め、姿勢を改善するストレッチ。デスクワークの疲れにも効果的です。</p>
+                        <div class="exercise-details">
+                            <div class="detail-item">
+                                <strong>セット数:</strong> 2-3セット
+                            </div>
+                            <div class="detail-item">
+                                <strong>回数:</strong> 10-15回
+                            </div>
+                            <div class="detail-item">
+                                <strong>ホールド:</strong> 5秒</div>
+                        </div>
+                        <div class="key-points">
+                            <h5>重要ポイント:</h5>
+                            <ul>
+                                <li>ゆっくりと滑らかな動作で行う</li>
+                                <li>呼吸と動作を連動させる</li>
+                                <li>無理に伸ばしすぎない</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fitness & Body Make Portal</h3>
+                    <p>理想の体づくりをサポートする総合情報ポータルサイト。科学的根拠に基づいた情報で、あなたの健康とフィットネスライフを応援します。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>メインコンテンツ</h3>
+                    <ul>
+                        <li><a href="../workout/index.html">ワークアウト</a></li>
+                        <li><a href="../nutrition/index.html">栄養・食事</a></li>
+                        <li><a href="../tools/index.html">ツール・計算機</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>サポート</h3>
+                    <ul>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                        <li><a href="#faq">よくある質問</a></li>
+                        <li><a href="#privacy">プライバシーポリシー</a></li>
+                        <li><a href="#terms">利用規約</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>フォローしてください</h3>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fitness & Body Make Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script src="workout.js"></script>
+</body>
+</html>

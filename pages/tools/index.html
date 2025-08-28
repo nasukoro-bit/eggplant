@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ツール・計算機 - Fitness & Body Make Portal</title>
+    <meta name="description" content="BMI計算、基礎代謝計算、カロリー計算、ワークアウトタイマーなど、フィットネスに役立つツール集。">
+    <meta name="keywords" content="BMI計算機, カロリー計算, 基礎代謝, ワークアウトタイマー, フィットネスツール">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="tools.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../../index.html" class="logo">Fitness & Body Make Portal</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">ホーム</a></li>
+                <li><a href="../workout/index.html">ワークアウト</a></li>
+                <li><a href="../nutrition/index.html">栄養</a></li>
+                <li><a href="../tools/index.html" class="active">ツール</a></li>
+            </ul>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="tools-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>フィットネスツール</h1>
+                <p>体組成の把握から目標設定、トレーニング管理まで。あなたのフィットネスライフをサポートする実用的なツール集です。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Navigation -->
+    <section class="tool-nav">
+        <div class="container">
+            <div class="nav-buttons">
+                <button class="tool-nav-btn active" data-target="bmi-calculator">BMI計算</button>
+                <button class="tool-nav-btn" data-target="calorie-calculator">カロリー計算</button>
+                <button class="tool-nav-btn" data-target="workout-timer">ワークアウトタイマー</button>
+                <button class="tool-nav-btn" data-target="progress-tracker">進捗記録</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- BMI Calculator Section -->
+    <section id="bmi-calculator" class="tool-section active">
+        <div class="container">
+            <div class="tool-header">
+                <h2>BMI計算機</h2>
+                <p>身長と体重からBMI（Body Mass Index）を計算し、標準体重や健康状態をチェックしましょう。</p>
+            </div>
+            
+            <div class="tool-container">
+                <div class="calculator-card">
+                    <div class="input-section">
+                        <h3>基本情報入力</h3>
+                        <div class="input-group">
+                            <label for="height">身長 (cm)</label>
+                            <input type="number" id="height" placeholder="例: 170" min="100" max="250" step="0.1">
+                            <span class="input-unit">cm</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="weight">体重 (kg)</label>
+                            <input type="number" id="weight" placeholder="例: 65" min="30" max="200" step="0.1">
+                            <span class="input-unit">kg</span>
+                        </div>
+                        <button class="calculate-btn" onclick="calculateBMI()">BMIを計算</button>
+                    </div>
+                    
+                    <div class="result-section" id="bmi-result">
+                        <h3>計算結果</h3>
+                        <div class="result-display">
+                            <div class="bmi-value">
+                                <span class="value" id="bmi-value">--</span>
+                                <span class="unit">BMI</span>
+                            </div>
+                            <div class="bmi-category" id="bmi-category">データを入力してください</div>
+                        </div>
+                        <div class="bmi-range">
+                            <div class="range-item underweight">
+                                <span class="range-label">低体重</span>
+                                <span class="range-value">18.5未満</span>
+                            </div>
+                            <div class="range-item normal">
+                                <span class="range-label">標準体重</span>
+                                <span class="range-value">18.5-24.9</span>
+                            </div>
+                            <div class="range-item overweight">
+                                <span class="range-label">過体重</span>
+                                <span class="range-value">25.0-29.9</span>
+                            </div>
+                            <div class="range-item obese">
+                                <span class="range-label">肥満</span>
+                                <span class="range-value">30.0以上</span>
+                            </div>
+                        </div>
+                        <div class="advice-section" id="bmi-advice">
+                            <h4>アドバイス</h4>
+                            <p id="advice-text">身長と体重を入力してBMIを計算してください。</p>
+                        </div>
+                        <div class="additional-info">
+                            <h4>標準体重</h4>
+                            <div class="standard-weight" id="standard-weight">--kg</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calorie Calculator Section -->
+    <section id="calorie-calculator" class="tool-section">
+        <div class="container">
+            <div class="tool-header">
+                <h2>カロリー計算ツール</h2>
+                <p>基礎代謝量と総消費カロリーを計算し、目標に応じた摂取カロリーを算出します。</p>
+            </div>
+            
+            <div class="tool-container">
+                <div class="calculator-card">
+                    <div class="input-section">
+                        <h3>基本情報入力</h3>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="cal-height">身長 (cm)</label>
+                                <input type="number" id="cal-height" placeholder="170" min="100" max="250">
+                                <span class="input-unit">cm</span>
+                            </div>
+                            <div class="input-group">
+                                <label for="cal-weight">体重 (kg)</label>
+                                <input type="number" id="cal-weight" placeholder="65" min="30" max="200">
+                                <span class="input-unit">kg</span>
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="cal-age">年齢</label>
+                                <input type="number" id="cal-age" placeholder="30" min="15" max="100">
+                                <span class="input-unit">歳</span>
+                            </div>
+                            <div class="input-group">
+                                <label for="cal-gender">性別</label>
+                                <select id="cal-gender">
+                                    <option value="male">男性</option>
+                                    <option value="female">女性</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="activity-level">活動レベル</label>
+                            <select id="activity-level">
+                                <option value="1.2">座りがちな生活</option>
+                                <option value="1.375">軽い運動（週1-3日）</option>
+                                <option value="1.55">中程度の運動（週3-5日）</option>
+                                <option value="1.725">激しい運動（週6-7日）</option>
+                                <option value="1.9">非常に激しい運動・肉体労働</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="goal">目標</label>
+                            <select id="goal">
+                                <option value="maintain">体重維持</option>
+                                <option value="lose-0.5">緩やかな減量（-0.5kg/月）</option>
+                                <option value="lose-1">標準的な減量（-1kg/月）</option>
+                                <option value="lose-2">積極的な減量（-2kg/月）</option>
+                                <option value="gain-0.5">緩やかな増量（+0.5kg/月）</option>
+                                <option value="gain-1">標準的な増量（+1kg/月）</option>
+                            </select>
+                        </div>
+                        <button class="calculate-btn" onclick="calculateCalories()">カロリーを計算</button>
+                    </div>
+                    
+                    <div class="result-section" id="calorie-result">
+                        <h3>計算結果</h3>
+                        <div class="calorie-results">
+                            <div class="result-item">
+                                <span class="result-label">基礎代謝量 (BMR)</span>
+                                <span class="result-value" id="bmr-value">--</span>
+                                <span class="result-unit">kcal/日</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">総消費カロリー (TDEE)</span>
+                                <span class="result-value" id="tdee-value">--</span>
+                                <span class="result-unit">kcal/日</span>
+                            </div>
+                            <div class="result-item highlighted">
+                                <span class="result-label">目標摂取カロリー</span>
+                                <span class="result-value" id="target-calories">--</span>
+                                <span class="result-unit">kcal/日</span>
+                            </div>
+                        </div>
+                        <div class="macro-breakdown">
+                            <h4>推奨マクロバランス</h4>
+                            <div class="macro-chart" id="macro-chart">
+                                <div class="macro-item">
+                                    <span class="macro-color protein"></span>
+                                    <span class="macro-label">タンパク質</span>
+                                    <span class="macro-value" id="protein-value">--g</span>
+                                    <span class="macro-percent">25-30%</span>
+                                </div>
+                                <div class="macro-item">
+                                    <span class="macro-color carbs"></span>
+                                    <span class="macro-label">炭水化物</span>
+                                    <span class="macro-value" id="carbs-value">--g</span>
+                                    <span class="macro-percent">40-50%</span>
+                                </div>
+                                <div class="macro-item">
+                                    <span class="macro-color fats"></span>
+                                    <span class="macro-label">脂質</span>
+                                    <span class="macro-value" id="fats-value">--g</span>
+                                    <span class="macro-percent">20-30%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workout Timer Section -->
+    <section id="workout-timer" class="tool-section">
+        <div class="container">
+            <div class="tool-header">
+                <h2>ワークアウトタイマー</h2>
+                <p>インターバルタイマーとストップウォッチでトレーニングの時間を効率的に管理しましょう。</p>
+            </div>
+            
+            <div class="tool-container">
+                <div class="timer-tabs">
+                    <button class="timer-tab active" data-timer="interval">インターバルタイマー</button>
+                    <button class="timer-tab" data-timer="stopwatch">ストップウォッチ</button>
+                </div>
+
+                <!-- Interval Timer -->
+                <div id="interval-timer" class="timer-card active">
+                    <div class="timer-setup">
+                        <h3>タイマー設定</h3>
+                        <div class="setup-row">
+                            <div class="setup-group">
+                                <label for="work-time">ワーク時間</label>
+                                <div class="time-input">
+                                    <input type="number" id="work-minutes" placeholder="0" min="0" max="59" value="1">
+                                    <span>:</span>
+                                    <input type="number" id="work-seconds" placeholder="00" min="0" max="59" value="30" step="1">
+                                </div>
+                            </div>
+                            <div class="setup-group">
+                                <label for="rest-time">休憩時間</label>
+                                <div class="time-input">
+                                    <input type="number" id="rest-minutes" placeholder="0" min="0" max="59" value="0">
+                                    <span>:</span>
+                                    <input type="number" id="rest-seconds" placeholder="30" min="0" max="59" value="30" step="1">
+                                </div>
+                            </div>
+                            <div class="setup-group">
+                                <label for="rounds">ラウンド数</label>
+                                <input type="number" id="rounds" placeholder="5" min="1" max="50" value="5">
+                            </div>
+                        </div>
+                        <div class="preset-buttons">
+                            <button onclick="setPreset('tabata')">Tabata (20s/10s)</button>
+                            <button onclick="setPreset('emom')">EMOM (1min)</button>
+                            <button onclick="setPreset('hiit')">HIIT (45s/15s)</button>
+                        </div>
+                    </div>
+                    
+                    <div class="timer-display">
+                        <div class="timer-phase" id="timer-phase">準備</div>
+                        <div class="timer-time" id="timer-time">00:00</div>
+                        <div class="timer-round" id="timer-round">Round 1 / 5</div>
+                        <div class="timer-progress">
+                            <div class="progress-bar" id="progress-bar"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="timer-controls">
+                        <button class="control-btn start" id="start-interval">開始</button>
+                        <button class="control-btn pause" id="pause-interval" disabled>一時停止</button>
+                        <button class="control-btn reset" id="reset-interval">リセット</button>
+                    </div>
+                </div>
+
+                <!-- Stopwatch -->
+                <div id="stopwatch-timer" class="timer-card">
+                    <div class="timer-display">
+                        <div class="timer-time large" id="stopwatch-time">00:00:00</div>
+                        <div class="lap-time" id="current-lap">ラップ: 00:00:00</div>
+                    </div>
+                    
+                    <div class="timer-controls">
+                        <button class="control-btn start" id="start-stopwatch">開始</button>
+                        <button class="control-btn lap" id="lap-stopwatch" disabled>ラップ</button>
+                        <button class="control-btn pause" id="pause-stopwatch" disabled>停止</button>
+                        <button class="control-btn reset" id="reset-stopwatch">リセット</button>
+                    </div>
+                    
+                    <div class="lap-times" id="lap-times">
+                        <h4>ラップタイム</h4>
+                        <div class="lap-list" id="lap-list">
+                            <!-- Lap times will be added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Tracker Section -->
+    <section id="progress-tracker" class="tool-section">
+        <div class="container">
+            <div class="tool-header">
+                <h2>進捗記録</h2>
+                <p>体重、体脂肪率、筋肉量などの記録を管理し、進捗をグラフで確認できます。</p>
+            </div>
+            
+            <div class="tool-container">
+                <div class="progress-tabs">
+                    <button class="progress-tab active" data-tab="record">記録入力</button>
+                    <button class="progress-tab" data-tab="history">履歴・グラフ</button>
+                    <button class="progress-tab" data-tab="goals">目標設定</button>
+                </div>
+
+                <!-- Record Input -->
+                <div id="record-input" class="progress-card active">
+                    <div class="record-form">
+                        <h3>今日の記録</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="record-date">日付</label>
+                                <input type="date" id="record-date">
+                            </div>
+                            <div class="form-group">
+                                <label for="record-weight">体重 (kg)</label>
+                                <input type="number" id="record-weight" step="0.1" placeholder="65.0">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="record-body-fat">体脂肪率 (%)</label>
+                                <input type="number" id="record-body-fat" step="0.1" placeholder="15.0">
+                            </div>
+                            <div class="form-group">
+                                <label for="record-muscle-mass">筋肉量 (kg)</label>
+                                <input type="number" id="record-muscle-mass" step="0.1" placeholder="50.0">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="workout-duration">運動時間 (分)</label>
+                                <input type="number" id="workout-duration" placeholder="60">
+                            </div>
+                            <div class="form-group">
+                                <label for="calories-burned">消費カロリー</label>
+                                <input type="number" id="calories-burned" placeholder="300">
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="notes">メモ・感想</label>
+                            <textarea id="notes" placeholder="今日のトレーニングの感想や体調について記録しましょう"></textarea>
+                        </div>
+                        <button class="save-btn" onclick="saveRecord()">記録を保存</button>
+                    </div>
+                    
+                    <div class="quick-stats">
+                        <h4>今週の統計</h4>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value" id="week-workouts">0</span>
+                                <span class="stat-label">ワークアウト回数</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" id="week-duration">0</span>
+                                <span class="stat-label">総運動時間(分)</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" id="week-calories">0</span>
+                                <span class="stat-label">総消費カロリー</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" id="weight-change">--</span>
+                                <span class="stat-label">体重変化(kg)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- History & Chart -->
+                <div id="history-chart" class="progress-card">
+                    <div class="chart-controls">
+                        <h3>進捗グラフ</h3>
+                        <div class="chart-options">
+                            <select id="chart-period">
+                                <option value="week">過去1週間</option>
+                                <option value="month">過去1ヶ月</option>
+                                <option value="3months">過去3ヶ月</option>
+                                <option value="year">過去1年</option>
+                            </select>
+                            <select id="chart-metric">
+                                <option value="weight">体重</option>
+                                <option value="bodyFat">体脂肪率</option>
+                                <option value="muscleMass">筋肉量</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="progress-chart"></canvas>
+                    </div>
+                    
+                    <div class="history-table">
+                        <h4>記録履歴</h4>
+                        <div class="table-container">
+                            <table id="history-table">
+                                <thead>
+                                    <tr>
+                                        <th>日付</th>
+                                        <th>体重</th>
+                                        <th>体脂肪率</th>
+                                        <th>筋肉量</th>
+                                        <th>運動時間</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="history-tbody">
+                                    <!-- Records will be added here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goals -->
+                <div id="goals-setting" class="progress-card">
+                    <div class="goals-form">
+                        <h3>目標設定</h3>
+                        <div class="goal-item">
+                            <label for="target-weight">目標体重 (kg)</label>
+                            <div class="goal-input">
+                                <input type="number" id="target-weight" step="0.1" placeholder="60.0">
+                                <input type="date" id="target-weight-date">
+                            </div>
+                        </div>
+                        <div class="goal-item">
+                            <label for="target-body-fat">目標体脂肪率 (%)</label>
+                            <div class="goal-input">
+                                <input type="number" id="target-body-fat" step="0.1" placeholder="12.0">
+                                <input type="date" id="target-body-fat-date">
+                            </div>
+                        </div>
+                        <div class="goal-item">
+                            <label for="target-muscle-mass">目標筋肉量 (kg)</label>
+                            <div class="goal-input">
+                                <input type="number" id="target-muscle-mass" step="0.1" placeholder="55.0">
+                                <input type="date" id="target-muscle-mass-date">
+                            </div>
+                        </div>
+                        <div class="goal-item">
+                            <label for="weekly-workouts">週間ワークアウト目標</label>
+                            <input type="number" id="weekly-workouts" min="1" max="7" placeholder="3">
+                        </div>
+                        <button class="save-btn" onclick="saveGoals()">目標を保存</button>
+                    </div>
+                    
+                    <div class="goals-progress">
+                        <h4>目標達成度</h4>
+                        <div class="progress-items">
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span class="progress-label">体重目標</span>
+                                    <span class="progress-percentage" id="weight-progress">--</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" id="weight-progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span class="progress-label">体脂肪率目標</span>
+                                    <span class="progress-percentage" id="bodyfat-progress">--</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" id="bodyfat-progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span class="progress-label">筋肉量目標</span>
+                                    <span class="progress-percentage" id="muscle-progress">--</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" id="muscle-progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span class="progress-label">週間ワークアウト</span>
+                                    <span class="progress-percentage" id="workout-progress">--</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" id="workout-progress-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fitness & Body Make Portal</h3>
+                    <p>理想の体づくりをサポートする総合情報ポータルサイト。科学的根拠に基づいた情報で、あなたの健康とフィットネスライフを応援します。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>メインコンテンツ</h3>
+                    <ul>
+                        <li><a href="../workout/index.html">ワークアウト</a></li>
+                        <li><a href="../nutrition/index.html">栄養・食事</a></li>
+                        <li><a href="../tools/index.html">ツール・計算機</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>サポート</h3>
+                    <ul>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                        <li><a href="#faq">よくある質問</a></li>
+                        <li><a href="#privacy">プライバシーポリシー</a></li>
+                        <li><a href="#terms">利用規約</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>フォローしてください</h3>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fitness & Body Make Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="tools.js"></script>
+</body>
+</html>
